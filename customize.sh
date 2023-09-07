@@ -12,11 +12,13 @@ unzip -j -o "${ZIPFILE}" "v2ray/bin/v2ray" -d $MODPATH/system/bin >&2
 unzip -j -o "${ZIPFILE}" "v2ray/bin/geoip.dat" -d /data/v2ray >&2
 unzip -j -o "${ZIPFILE}" "v2ray/bin/geosite.dat" -d /data/v2ray >&2
 unzip -j -o "${ZIPFILE}" "v2ray/scripts/*" -d $MODPATH/scripts >&2
+unzip -j -o "${ZIPFILE}" "module.prop" -d $MODPATH >&2
 unzip -j -o "${ZIPFILE}" "service.sh" -d $MODPATH >&2
 unzip -j -o "${ZIPFILE}" "uninstall.sh" -d $MODPATH >&2
-rm "${download_v2ray_zip}"
+ln -s /data/v2ray/geoip.dat $MODPATH/system/bin/geoip.dat
+ln -s /data/v2ray/geosite.dat $MODPATH/system/bin/geosite.dat
 
-ui_print "- Copying V2Ray config and data files"
+ui_print "- Copying V2Ray config files"
 [ -f /data/v2ray/softap.list ] || \
 echo "192.168.43.0/24" > /data/v2ray/softap.list
 [ -f /data/v2ray/resolv.conf ] || \
