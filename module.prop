@@ -1,6 +1,6 @@
-id=v2ray
-name=V2ray for Android
-version=2.1.0.0
-versionCode=20230529
-author=ohnoku
-description=V2ray core with service scripts for Android
+id=v2ray-magisk
+name=V2Ray for Magisk
+version=1.0.0
+versionCode=1
+author=GNU/Lucy
+description=V2Ray core with service scripts for Magisk
